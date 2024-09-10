@@ -20,11 +20,13 @@ class MessageController extends Controller
                 $result = $value1 * $value2;
                 break;
             case 'division':
+                if ($value2 == 0) {
+                $result = '計算できません';break;
+}
                 $result = $value1 / $value2;
-                break;
+break;
         }
 
         return view('message.result', ['result' => $result]);
     }
     }
-
